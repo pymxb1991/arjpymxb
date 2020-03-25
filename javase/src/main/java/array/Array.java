@@ -2,6 +2,9 @@ package array;
 
 import java.util.ArrayList;
 
+/**
+ * 内存分析见resource 中图片分析
+ */
 public class Array {
     public static void main(String[] args) {
         //动态数组
