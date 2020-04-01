@@ -1,3 +1,8 @@
 /javase/target/classes/
 /out/production/javase/
 /javase/javase.iml
+/spring-demo/target/classes/
+/spring-easy-account-ann_withoutxmlioc/target/
+/spring-easy-account-xmlioc/target/
+/spring-IoC/target/classes/
+/spring-easy-account-annioc/target/

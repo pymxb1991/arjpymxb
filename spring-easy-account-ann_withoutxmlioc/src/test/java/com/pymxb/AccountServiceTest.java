@@ -26,10 +26,12 @@ public class AccountServiceTest {
        /* ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");*/
         //1.1当完全不使用配置文件时，可以使用如下方式加载配置
         //AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
-        //1.2 如果配置类上都不想写注解@Configuration  可以使用如下配置   要么当参数加上JdbcConfig，要么就是 使用注解，增加扫描配置方式
+        //1.2当创建了JdbcConfig 类时， 如果配置类上都不想写注解@Configuration  可以使用如下配置   要么当参数加上JdbcConfig，要么就是 使用注解，增加扫描配置方式
         //AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class, JdbcConfig.class);
         //1.3 比较理想的配置方式 --》引入import 注解
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        //1.4 如果创建了配置类如：JdbcConfig  ，此时JdbcConfig 上不想写 @Configuration ，而且@ComponentScan 上也不想再多写其它扫描包时，
+        //  可以使用@Import 注解，直接把配置类导入全局配置类中 @Import(JdbcConfig.class)
         //2、得到业务层对象
         IAccountService as = ac.getBean("accountService", IAccountService.class);
 
