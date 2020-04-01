@@ -12,6 +12,9 @@
         <module>javase</module>
         <module>spring-demo</module>
         <module>spring-IoC</module>
+        <module>spring-easy-account-xmlioc</module>
+        <module>spring-easy-account-annioc</module>
+        <module>spring-easy-account-ann_withoutxmlioc</module>
     </modules>
 
 

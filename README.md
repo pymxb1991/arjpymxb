@@ -13,5 +13,17 @@
     <bean id="accountDao" class="com.pymxb.dao.impl.AccountDaoImpl" 
           scope="" init-method="" destroy-method="">
              <property name="" value=""| ref="></property>
-         </bean>    
+         </bean>
+    Spring 注解
+    @Component    @Controller    @Service    @Repository
+    
+    @Autwired    @Qualifier   @Resource
+    
+    @Value  @Scope
+###spring-easy-account-xmlioc
+    基于XML 配置学习
+###spring-easy-account-annlioc
+    基于注解 配置学习
+###spring-easy-account-withoutxmlioc
+    无XML 纯注解配置学习
     
