@@ -7,19 +7,26 @@
     <bean id="accountService" class="com.pymxb.service.impl.AccountServiceImpl">
         <!-- 注入dao set方法注入-->
         <property name="accountDao" ref="accountDao"></property>
+
+        <!-- 注入事务管理器 -->
+        <property name="tManager" ref="tManager"></property>
     </bean>
 
     <!--配置Dao对象-->
     <bean id="accountDao" class="com.pymxb.dao.impl.AccountDaoImpl">
         <!-- 注入QueryRunner -->
         <property name="runner" ref="runner"></property>
+
+        <!-- 注入ConnectionUtils -->
+        <property name="connectionUtils" ref="connectionUtils"></property>
     </bean>
 
     <!--配置QueryRunner -->
     <!--单例情况下，多个Dao同时使用一个QueryRunner时 可能出现一个还没用完，另一个要使用，导致线程互相干扰 所以需要配置 scope 范围-->
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <!--改造： 数据源不直接注入，通过添加的工具类，从线程中获取，如果没有连接新创建连接 -->
         <!--注入数据源  构造函数注入-->
-        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+       <!-- <constructor-arg name="ds" ref="dataSource"></constructor-arg>-->
     </bean>
 
     <!-- 配置数据源 -->
@@ -29,5 +36,16 @@
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/easy"></property>
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
+    </bean>
+
+    <!-- 配置Connection的工具类 ConnectionUtils -->
+    <bean id="connectionUtils" class="com.pymxb.utils.ConnectionUtils">
+        <!-- 注入数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- 配置事务管理器-->
+    <bean id="tManager" class="com.pymxb.utils.TransactionManager">
+        <!-- 注入ConnectionUtils -->
+        <property name="connectionUtils" ref="connectionUtils"></property>
     </bean>
 </beans>
