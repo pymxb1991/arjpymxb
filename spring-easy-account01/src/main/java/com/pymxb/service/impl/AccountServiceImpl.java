@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * 账户的业务层实现类
+ *
+ * 事务的控制 都在业务类
  */
 public class AccountServiceImpl implements IAccountService {
 
