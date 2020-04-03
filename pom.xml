@@ -16,6 +16,7 @@
         <module>spring-easy-account-annioc</module>
         <module>spring-easy-account-ann_withoutxmlioc</module>
         <module>spring-easy-account01</module>
+        <module>spring-easy-account01-proxy</module>
     </modules>
 
 

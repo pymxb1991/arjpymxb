@@ -5,7 +5,7 @@ import com.pymxb.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service(value = "accountService") //µ±Ö»ÓĞÒ»¸övalue ÊôĞÔÊ±£¬¿ÉÒÔ²»Ğ´
+@Service(value = "accountService") //å½“åªæœ‰ä¸€ä¸ªvalue å±æ€§æ—¶ï¼Œå¯ä»¥ä¸å†™
 public class AccountServiceImpl implements IAccountService {
 
     @Autowired

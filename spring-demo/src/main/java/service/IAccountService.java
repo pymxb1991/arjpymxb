@@ -3,7 +3,7 @@ package service;
 public interface IAccountService {
 
     /**
-     * ±£´æÕË»§£¨´Ë´¦Ö»ÊÇÄ£Äâ£¬²¢²»ÊÇÕæµÄÒª±£´æ£©
+     * ä¿å­˜è´¦æˆ·ï¼ˆæ­¤å¤„åªæ˜¯æ¨¡æ‹Ÿï¼Œå¹¶ä¸æ˜¯çœŸçš„è¦ä¿å­˜ï¼‰
      */
     void saveAccount();
 }

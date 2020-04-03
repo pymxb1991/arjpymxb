@@ -7,6 +7,6 @@ import service.IAccountService;
 public class AccountServiceImpl implements IAccountService {
     @Override
     public void saveAccount() {
-        System.out.println("±£´æÕËºÅ³É¹¦ service");
+        System.out.println("ä¿å­˜è´¦å·æˆåŠŸ service");
     }
 }

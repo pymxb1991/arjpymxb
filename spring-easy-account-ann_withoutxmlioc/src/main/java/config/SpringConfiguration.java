@@ -5,38 +5,38 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * ¸ÃÀàÊÇÒ»¸öÅäÖÃÀà£¬ËüµÄ×÷ÓÃºÍbean.xmlÊÇÒ»ÑùµÄ
- * springÖÐµÄÐÂ×¢½â
+ * è¯¥ç±»æ˜¯ä¸€ä¸ªé…ç½®ç±»ï¼Œå®ƒçš„ä½œç”¨å’Œbean.xmlæ˜¯ä¸€æ ·çš„
+ * springä¸­çš„æ–°æ³¨è§£
  * @Configuration
- *     ×÷ÓÃ£ºÖ¸¶¨µ±Ç°ÀàÊÇÒ»¸öÅäÖÃÀà
+ *     ä½œç”¨ï¼šæŒ‡å®šå½“å‰ç±»æ˜¯ä¸€ä¸ªé…ç½®ç±»
  *
- *     Ï¸½Ú£ºµ±ÅäÖÃÀà×÷ÎªAnnotationConfigApplicationContext¶ÔÏó´´½¨µÄ²ÎÊýÊ±£¬¸Ã×¢½â¿ÉÒÔ²»Ð´¡£
+ *     ç»†èŠ‚ï¼šå½“é…ç½®ç±»ä½œä¸ºAnnotationConfigApplicationContextå¯¹è±¡åˆ›å»ºçš„å‚æ•°æ—¶ï¼Œè¯¥æ³¨è§£å¯ä»¥ä¸å†™ã€‚
  * @ComponentScan
- *      ×÷ÓÃ£ºÓÃÓÚÍ¨¹ý×¢½âÖ¸¶¨springÔÚ´´½¨ÈÝÆ÷Ê±ÒªÉ¨ÃèµÄ°ü
- *      ÊôÐÔ£º
- *          value£ºËüºÍ basePackagesµÄ×÷ÓÃÊÇÒ»ÑùµÄ£¬¶¼ÊÇÓÃÓÚÖ¸¶¨´´½¨ÈÝÆ÷Ê±ÒªÉ¨ÃèµÄ°ü¡£
- *                 ÎÒÃÇÊ¹ÓÃ´Ë×¢½â¾ÍµÈÍ¬ÓÚÔÚxmlÖÐÅäÖÃÁË:
+ *      ä½œç”¨ï¼šç”¨äºŽé€šè¿‡æ³¨è§£æŒ‡å®šspringåœ¨åˆ›å»ºå®¹å™¨æ—¶è¦æ‰«æçš„åŒ…
+ *      å±žæ€§ï¼š
+ *          valueï¼šå®ƒå’Œ basePackagesçš„ä½œç”¨æ˜¯ä¸€æ ·çš„ï¼Œéƒ½æ˜¯ç”¨äºŽæŒ‡å®šåˆ›å»ºå®¹å™¨æ—¶è¦æ‰«æçš„åŒ…ã€‚
+ *                 æˆ‘ä»¬ä½¿ç”¨æ­¤æ³¨è§£å°±ç­‰åŒäºŽåœ¨xmlä¸­é…ç½®äº†:
  *                      <context:component-scan base-package="com.pymxb"></context:component-scan>
  *  Bean
- *      ×÷ÓÃ£ºÓÃÓÚ°Ñµ±Ç°·½·¨µÄ·µ»ØÖµ×÷Îªbean¶ÔÏó´æÈëspringµÄiocÈÝÆ÷ÖÐ
- *      ÊôÐÔ:
- *          name:ÓÃÓÚÖ¸¶¨beanµÄid¡£µ±²»Ð´Ê±£¬Ä¬ÈÏÖµÊÇµ±Ç°·½·¨µÄÃû³Æ
- *      Ï¸½Ú£º
- *          µ±ÎÒÃÇÊ¹ÓÃ×¢½âÅäÖÃ·½·¨Ê±£¬Èç¹û·½·¨ÓÐ²ÎÊý£¬spring¿ò¼Ü»áÈ¥ÈÝÆ÷ÖÐ²éÕÒÓÐÃ»ÓÐ¿ÉÓÃµÄbean¶ÔÏó¡£
- *          ²éÕÒµÄ·½Ê½ºÍAutowired×¢½âµÄ×÷ÓÃÊÇÒ»ÑùµÄ
+ *      ä½œç”¨ï¼šç”¨äºŽæŠŠå½“å‰æ–¹æ³•çš„è¿”å›žå€¼ä½œä¸ºbeanå¯¹è±¡å­˜å…¥springçš„iocå®¹å™¨ä¸­
+ *      å±žæ€§:
+ *          name:ç”¨äºŽæŒ‡å®šbeançš„idã€‚å½“ä¸å†™æ—¶ï¼Œé»˜è®¤å€¼æ˜¯å½“å‰æ–¹æ³•çš„åç§°
+ *      ç»†èŠ‚ï¼š
+ *          å½“æˆ‘ä»¬ä½¿ç”¨æ³¨è§£é…ç½®æ–¹æ³•æ—¶ï¼Œå¦‚æžœæ–¹æ³•æœ‰å‚æ•°ï¼Œspringæ¡†æž¶ä¼šåŽ»å®¹å™¨ä¸­æŸ¥æ‰¾æœ‰æ²¡æœ‰å¯ç”¨çš„beanå¯¹è±¡ã€‚
+ *          æŸ¥æ‰¾çš„æ–¹å¼å’ŒAutowiredæ³¨è§£çš„ä½œç”¨æ˜¯ä¸€æ ·çš„
  *  Import
- *      ×÷ÓÃ£ºÓÃÓÚµ¼ÈëÆäËûµÄÅäÖÃÀà
- *      ÊôÐÔ£º
- *          value£ºÓÃÓÚÖ¸¶¨ÆäËûÅäÖÃÀàµÄ×Ö½ÚÂë¡£
- *                  µ±ÎÒÃÇÊ¹ÓÃImportµÄ×¢½âÖ®ºó£¬ÓÐImport×¢½âµÄÀà¾Í¸¸ÅäÖÃÀà£¬¶øµ¼ÈëµÄ¶¼ÊÇ×ÓÅäÖÃÀà
+ *      ä½œç”¨ï¼šç”¨äºŽå¯¼å…¥å…¶ä»–çš„é…ç½®ç±»
+ *      å±žæ€§ï¼š
+ *          valueï¼šç”¨äºŽæŒ‡å®šå…¶ä»–é…ç½®ç±»çš„å­—èŠ‚ç ã€‚
+ *                  å½“æˆ‘ä»¬ä½¿ç”¨Importçš„æ³¨è§£ä¹‹åŽï¼Œæœ‰Importæ³¨è§£çš„ç±»å°±çˆ¶é…ç½®ç±»ï¼Œè€Œå¯¼å…¥çš„éƒ½æ˜¯å­é…ç½®ç±»
  *  PropertySource
- *      ×÷ÓÃ£ºÓÃÓÚÖ¸¶¨propertiesÎÄ¼þµÄÎ»ÖÃ
- *      ÊôÐÔ£º
- *          value£ºÖ¸¶¨ÎÄ¼þµÄÃû³ÆºÍÂ·¾¶¡£
- *                  ¹Ø¼ü×Ö£ºclasspath£¬±íÊ¾ÀàÂ·¾¶ÏÂ
+ *      ä½œç”¨ï¼šç”¨äºŽæŒ‡å®špropertiesæ–‡ä»¶çš„ä½ç½®
+ *      å±žæ€§ï¼š
+ *          valueï¼šæŒ‡å®šæ–‡ä»¶çš„åç§°å’Œè·¯å¾„ã€‚
+ *                  å…³é”®å­—ï¼šclasspathï¼Œè¡¨ç¤ºç±»è·¯å¾„ä¸‹
  */
 //@Configuration
-@ComponentScan(basePackages = {"com.pymxb"}) //É¨Ãè°ü£¬±ØÐëÊÇÅäÖÃÀà
+@ComponentScan(basePackages = {"com.pymxb"}) //æ‰«æåŒ…ï¼Œå¿…é¡»æ˜¯é…ç½®ç±»
 @Import(JdbcConfig.class)
 @PropertySource("classpath:jdbcConfig.properties")
 public class SpringConfiguration {

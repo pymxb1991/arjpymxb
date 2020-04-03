@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 import javax.sql.DataSource;
 
 /**
- * ºÍspringÁ¬½ÓÊı¾İ¿âÏà¹ØµÄÅäÖÃÀà
+ * å’Œspringè¿æ¥æ•°æ®åº“ç›¸å…³çš„é…ç½®ç±»
  */
 //@Configuration
 public class JdbcConfig {
@@ -28,36 +28,36 @@ public class JdbcConfig {
     private String password;
 
     /**
-     * ÓÃÓÚ´´½¨Ò»¸öQueryRunner¶ÔÏó
+     * ç”¨äºåˆ›å»ºä¸€ä¸ªQueryRunnerå¯¹è±¡
      *
-     *    ×¢Òâ£º
-     *          1¡¢µ±Ê¹ÓÃ¶àÊı¾İÔ´Ê±£¬Èç¹û¶¼ÊÇ·µ»ØÏàÍ¬ÀàĞÍµÄÊı¾İÔ´,Ê×ÏÈ»á¸ù¾İµ±Ç° BeanµÄID À´´´½¨Êı¾İÔ´£»
-     *          2¡¢Èç¹û¸ù¾İµ±Ç° BeanµÄID ÕÒ²»µ½¶ÔÓ¦µÄÍ¬ÃûÊı¾İÔ´£¬Ò²¾ÍÊÇËµÁ½¸öÊı¾İÔ´Ê¹ÓÃ@Bean ¶¨ÒåµÄÃû³Æ¶¼²»Ò»Ñù£¬ÄÇÃ´Ôò»áÅ×³öÒì³£
+     *    æ³¨æ„ï¼š
+     *          1ã€å½“ä½¿ç”¨å¤šæ•°æ®æºæ—¶ï¼Œå¦‚æœéƒ½æ˜¯è¿”å›ç›¸åŒç±»å‹çš„æ•°æ®æº,é¦–å…ˆä¼šæ ¹æ®å½“å‰ Beançš„ID æ¥åˆ›å»ºæ•°æ®æºï¼›
+     *          2ã€å¦‚æœæ ¹æ®å½“å‰ Beançš„ID æ‰¾ä¸åˆ°å¯¹åº”çš„åŒåæ•°æ®æºï¼Œä¹Ÿå°±æ˜¯è¯´ä¸¤ä¸ªæ•°æ®æºä½¿ç”¨@Bean å®šä¹‰çš„åç§°éƒ½ä¸ä¸€æ ·ï¼Œé‚£ä¹ˆåˆ™ä¼šæŠ›å‡ºå¼‚å¸¸
      *             expected single matching bean but found2:ds1 ds2
-     *             Èç¹ûÏë½â¾ö´ËÒì³££¬
-     *                1¡¢¿ÉÒÔ°ÑÊı¾İÔ´Ãû³ÆÃüÃû¸úÆäÖĞÒ»¸öÊı¾İÔ´Ò»ÖÂ£»
-     *                2¡¢Ò²¿ÉÒÔÖ±½ÓÊ¹ÓÃ@QualifierÀ´±ê¼ÇÊı¾İÔ´½øĞĞÅäÖÃ£º
+     *             å¦‚æœæƒ³è§£å†³æ­¤å¼‚å¸¸ï¼Œ
+     *                1ã€å¯ä»¥æŠŠæ•°æ®æºåç§°å‘½åè·Ÿå…¶ä¸­ä¸€ä¸ªæ•°æ®æºä¸€è‡´ï¼›
+     *                2ã€ä¹Ÿå¯ä»¥ç›´æ¥ä½¿ç”¨@Qualifieræ¥æ ‡è®°æ•°æ®æºè¿›è¡Œé…ç½®ï¼š
      *                @Qualifier
-     *                     Ê×ÏÈÒ»ÉÏÀ´»áÏÈ°´ÕÕÀàĞÍÀ´½øĞĞ×¢Èë£¬
-     *                     µ±Ã»ÓĞÀàĞÍÆ¥Åä£¬»òÓĞ¶à¸öÀàĞÍÆ¥ÅäÊ±²¢ÇÒĞÎ²ÎÎŞ·¨ÔÚ¶à¸öÆ¥ÅäÖĞÕÒµ½·ûºÏÃû³ÆµÄID Ê±£¬¾Í»áÊ¹ÓÃ@Qualifier±ê¼ÇµÄÊı¾İÔ´À´Ö´ĞĞ
+     *                     é¦–å…ˆä¸€ä¸Šæ¥ä¼šå…ˆæŒ‰ç…§ç±»å‹æ¥è¿›è¡Œæ³¨å…¥ï¼Œ
+     *                     å½“æ²¡æœ‰ç±»å‹åŒ¹é…ï¼Œæˆ–æœ‰å¤šä¸ªç±»å‹åŒ¹é…æ—¶å¹¶ä¸”å½¢å‚æ— æ³•åœ¨å¤šä¸ªåŒ¹é…ä¸­æ‰¾åˆ°ç¬¦åˆåç§°çš„ID æ—¶ï¼Œå°±ä¼šä½¿ç”¨@Qualifieræ ‡è®°çš„æ•°æ®æºæ¥æ‰§è¡Œ
      * @param dataSource
      * @return
      */
     @Bean(name="runner")
-    @Scope("prototype")//Ö§³Ö¶àÀı
+    @Scope("prototype")//æ”¯æŒå¤šä¾‹
     public QueryRunner createQueryRunner(@Qualifier("ds1") DataSource dataSource){
         return new QueryRunner(dataSource);
     }
 
     /**
-     * ´´½¨Êı¾İÔ´¶ÔÏó
+     * åˆ›å»ºæ•°æ®æºå¯¹è±¡
      * @return
      */
     @Bean(name="dataSource")
     public DataSource createDataSource(){
         try {
             ComboPooledDataSource ds = new ComboPooledDataSource();
-            //ÓĞÁËÊı¾İ¿âÁ¬½ÓÅäÖÃÎÄ¼şÖ®ºó£¬¿ÉÒÔÊ¹ÓÃ@Value ×¢½â @PropertySource
+            //æœ‰äº†æ•°æ®åº“è¿æ¥é…ç½®æ–‡ä»¶ä¹‹åï¼Œå¯ä»¥ä½¿ç”¨@Value æ³¨è§£ @PropertySource
        /*     ds.setDriverClass("com.mysql.jdbc.Driver");
             ds.setJdbcUrl("jdbc:mysql://localhost:3306/easy");
             ds.setUser("root");
@@ -73,16 +73,16 @@ public class JdbcConfig {
     }
 
     /**
-     * ×¢Òâ£º
+     * æ³¨æ„ï¼š
      *
-     * ´´½¨Êı¾İÔ´¶ÔÏó
+     * åˆ›å»ºæ•°æ®æºå¯¹è±¡
      * @return
      */
     @Bean(name="ds1")
     public DataSource createDataSource1(){
         try {
             ComboPooledDataSource ds = new ComboPooledDataSource();
-            //ÓĞÁËÊı¾İ¿âÁ¬½ÓÅäÖÃÎÄ¼şÖ®ºó£¬¿ÉÒÔÊ¹ÓÃ@Value ×¢½â @PropertySource
+            //æœ‰äº†æ•°æ®åº“è¿æ¥é…ç½®æ–‡ä»¶ä¹‹åï¼Œå¯ä»¥ä½¿ç”¨@Value æ³¨è§£ @PropertySource
        /*     ds.setDriverClass("com.mysql.jdbc.Driver");
             ds.setJdbcUrl("jdbc:mysql://localhost:3306/easy");
             ds.setUser("root");

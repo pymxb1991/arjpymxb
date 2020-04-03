@@ -10,9 +10,9 @@ import service.IAccountService;
 public class AccountController {
     public static void main(String[] args) {
 
-        //1¡¢»ñÈ¡ºËĞÄÈİÆ÷¶ÔÏó
+        //1ã€è·å–æ ¸å¿ƒå®¹å™¨å¯¹è±¡
         ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-        //2¡¢¸ù¾İID »ñÈ¡Bean¶ÔÏó
+        //2ã€æ ¹æ®ID è·å–Beanå¯¹è±¡
         IAccountService accountService =(IAccountService)ac.getBean("accountService");
         IAccountDao accountDao = ac.getBean("accountDao", IAccountDao.class);
 
