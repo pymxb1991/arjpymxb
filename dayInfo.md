@@ -1,5 +1,5 @@
 # Array
- - ÓÃÓÚ¹¹ÔìÊı×éµÄÈ«¾Ö¶ÔÏó£¬Êı×éÊÇÀàËÆÓÚÁĞ±íµÄ¸ß½×¶ÔÏó¡£
+ - ç”¨äºæ„é€ æ•°ç»„çš„å…¨å±€å¯¹è±¡ï¼Œæ•°ç»„æ˜¯ç±»ä¼¼äºåˆ—è¡¨çš„é«˜é˜¶å¯¹è±¡ã€‚
  ```javascript 1.5
 var promise = {
   'var'  : 'text',
@@ -9,8 +9,8 @@ var promise = {
 console.log(promise['var']);
 ```
 # Array.prototype
- -  Í¨¹ıÊı×éµÄÔ­ĞÍ¶ÔÏó¿ÉÒÔÎªËùÓĞÊı×é¶ÔÏóÌí¼ÓÊôĞÔ
- -  ¿ÉÒÔÌí¼ÓĞÂ·½·¨ºÍÊôĞÔÒÔÀ©Õ¹ËùÓĞArray¶ÔÏó
+ -  é€šè¿‡æ•°ç»„çš„åŸå‹å¯¹è±¡å¯ä»¥ä¸ºæ‰€æœ‰æ•°ç»„å¯¹è±¡æ·»åŠ å±æ€§
+ -  å¯ä»¥æ·»åŠ æ–°æ–¹æ³•å’Œå±æ€§ä»¥æ‰©å±•æ‰€æœ‰Arrayå¯¹è±¡
  ```javascript 1.5
 function Food(){}
 Food.prototype.say = function(){
@@ -18,41 +18,41 @@ Food.prototype.say = function(){
 }
 ```
 # Array.prototype.slice()
- - ³éÈ¡µ±Ç°Êı×éÖĞµÄÒ»¶ÎÔªËØ×éºÏ³ÉÒ»¸öĞÂÊı×é¡£
-1. ´ÓµÚ 2 Î»¿ªÊ¼É¾³ı 0 ¸öÔªËØ£¬²åÈë¡°drum¡±
+ - æŠ½å–å½“å‰æ•°ç»„ä¸­çš„ä¸€æ®µå…ƒç´ ç»„åˆæˆä¸€ä¸ªæ–°æ•°ç»„ã€‚
+1. ä»ç¬¬ 2 ä½å¼€å§‹åˆ é™¤ 0 ä¸ªå…ƒç´ ï¼Œæ’å…¥â€œdrumâ€
 ```javascript 1.5
 var myFish = ["angel", "clown", "mandarin", "sturgeon"];
 var removed = myFish.splice(2, 0, "drum");
 
-// ÔËËãºóµÄ myFish: ["angel", "clown", "drum", "mandarin", "sturgeon"]
-// ±»É¾³ıµÄÔªËØ: [], Ã»ÓĞÔªËØ±»É¾³ı
+// è¿ç®—åçš„ myFish: ["angel", "clown", "drum", "mandarin", "sturgeon"]
+// è¢«åˆ é™¤çš„å…ƒç´ : [], æ²¡æœ‰å…ƒç´ è¢«åˆ é™¤
 ```
-2. ´ÓµÚ 3 Î»¿ªÊ¼É¾³ı 1 ¸öÔªËØ
+2. ä»ç¬¬ 3 ä½å¼€å§‹åˆ é™¤ 1 ä¸ªå…ƒç´ 
 ```javascript 1.5
 var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
 var removed = myFish.splice(3, 1);
 
-// ÔËËãºóµÄ myFish: ["angel", "clown", "drum", "sturgeon"]
-// ±»É¾³ıµÄÔªËØ: ["mandarin"]
+// è¿ç®—åçš„ myFish: ["angel", "clown", "drum", "sturgeon"]
+// è¢«åˆ é™¤çš„å…ƒç´ : ["mandarin"]
 ```
-3. ´ÓµÚ 0 Î»¿ªÊ¼É¾³ı 2 ¸öÔªËØ£¬²åÈë"parrot"¡¢"anemone"ºÍ"blue"
+3. ä»ç¬¬ 0 ä½å¼€å§‹åˆ é™¤ 2 ä¸ªå…ƒç´ ï¼Œæ’å…¥"parrot"ã€"anemone"å’Œ"blue"
 ```javascript 1.5
 var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
 var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
 
-// ÔËËãºóµÄ myFish: ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
-// ±»É¾³ıµÄÔªËØ: ["angel", "clown"]
+// è¿ç®—åçš„ myFish: ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
+// è¢«åˆ é™¤çš„å…ƒç´ : ["angel", "clown"]
 ```
-4. ´ÓµÚ 2 Î»¿ªÊ¼É¾³ıËùÓĞÔªËØ
+4. ä»ç¬¬ 2 ä½å¼€å§‹åˆ é™¤æ‰€æœ‰å…ƒç´ 
 ```javascript 1.5
 var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
 var removed = myFish.splice(2);
 
-// ÔËËãºóµÄ myFish: ["angel", "clown"]
-// ±»É¾³ıµÄÔªËØ: ["mandarin", "sturgeon"]
+// è¿ç®—åçš„ myFish: ["angel", "clown"]
+// è¢«åˆ é™¤çš„å…ƒç´ : ["mandarin", "sturgeon"]
 ```
 #call()
- ·½·¨Ê¹ÓÃÒ»¸öÖ¸¶¨µÄ this ÖµºÍµ¥¶À¸ø³öµÄÒ»¸ö»ò¶à¸ö²ÎÊıÀ´µ÷ÓÃÒ»¸öº¯Êı
+ æ–¹æ³•ä½¿ç”¨ä¸€ä¸ªæŒ‡å®šçš„ this å€¼å’Œå•ç‹¬ç»™å‡ºçš„ä¸€ä¸ªæˆ–å¤šä¸ªå‚æ•°æ¥è°ƒç”¨ä¸€ä¸ªå‡½æ•°
  ```javascript 1.5
 function Product(name, price) {
   this.name = name;
@@ -69,7 +69,7 @@ console.log(cheese)
 console.log(new Food('cheese', 5).name);
 // expected output: "cheese"
 ```
-1. Ê¹ÓÃ call ·½·¨µ÷ÓÃ¸¸¹¹Ôìº¯Êı
+1. ä½¿ç”¨ call æ–¹æ³•è°ƒç”¨çˆ¶æ„é€ å‡½æ•°
 ```javascript 1.5
 function Product(name, price) {
      this.name = name;
@@ -93,7 +93,7 @@ function Product(name, price) {
    //expected output :  Food?{name: "feta", price: 5, category: "food"}
    //expected output :  Toy?{name: "robot", price: 40, category: "toy"}
 ```
-2. Ê¹ÓÃ call ·½·¨µ÷ÓÃº¯Êı²¢ÇÒÖ¸¶¨ÉÏÏÂÎÄµÄ 'this'
+2. ä½¿ç”¨ call æ–¹æ³•è°ƒç”¨å‡½æ•°å¹¶ä¸”æŒ‡å®šä¸Šä¸‹æ–‡çš„ 'this'
 ```javascript 1.5
 function greet() {
   var reply = [this.animal, 'typically sleep between', this.sleepDuration].join(' ');
@@ -107,7 +107,7 @@ var obj = {
 greet.call(obj); 
 // expected output :   cats typically sleep between 12 and 16 hours
 ```   
-3. Ê¹ÓÃ call ·½·¨µ÷ÓÃº¯Êı²¢ÇÒ²»Ö¸¶¨µÚÒ»¸ö²ÎÊı£¨argument£©
+3. ä½¿ç”¨ call æ–¹æ³•è°ƒç”¨å‡½æ•°å¹¶ä¸”ä¸æŒ‡å®šç¬¬ä¸€ä¸ªå‚æ•°ï¼ˆargumentï¼‰
 ```javascript 1.5
 var sData = 'Wisen';
 function display() {
@@ -116,7 +116,7 @@ function display() {
 display.call(); 
  // expected output :  sData value is Wisen
 ```
-4. ×¢Òâ£ºÔÚÑÏ¸ñÄ£Ê½ÏÂ£¬this µÄÖµ½«»áÊÇ undefined¡£¼ûÏÂÎÄ¡£
+4. æ³¨æ„ï¼šåœ¨ä¸¥æ ¼æ¨¡å¼ä¸‹ï¼Œthis çš„å€¼å°†ä¼šæ˜¯ undefinedã€‚è§ä¸‹æ–‡ã€‚
 ```javascript 1.5
 'use strict';
 
@@ -129,10 +129,17 @@ function display() {
 display.call(); // Cannot read the property of 'sData' of undefined
 ```
 # Array.prototype.slice.call()
- ÄÜ°ÑÀàÊı×é¶ÔÏó×ª»¯³ÉÊı×é
+ èƒ½æŠŠç±»æ•°ç»„å¯¹è±¡è½¬åŒ–æˆæ•°ç»„
 ```javascript 1.5
-//ÀàÊı×é,ÓĞlengthÊôĞÔ£¬³¤¶ÈÎª2£¬µÚ0¸öÊÇlai£¬µÚ1¸öÊÇhua
+//ç±»æ•°ç»„,æœ‰lengthå±æ€§ï¼Œé•¿åº¦ä¸º2ï¼Œç¬¬0ä¸ªæ˜¯laiï¼Œç¬¬1ä¸ªæ˜¯hua
 var a={length:2,0:'lai',1:'hua'};
 console.log(Array.prototype.slice.call(a,0));
-// ["lai", "hua"],µ÷ÓÃÊı×éµÄslice(0);
+// ["lai", "hua"],è°ƒç”¨æ•°ç»„çš„slice(0);
+
+  const PARTICIPANT_MAIN_CLASS = 'participant main';
+  document.getElementsByClassName(PARTICIPANT_MAIN_CLASS)
+ // expected output :  HTMLCollectionÂ [div#cby.participant.main, cby: div#cby.participant.main]
+
+var elements = Array.prototype.slice.call(document.getElementsByClassName(PARTICIPANT_MAIN_CLASS))
+//[div#cby.participant.main]
 ```  
