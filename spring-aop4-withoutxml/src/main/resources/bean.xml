@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置spring创建容器 时所要扫描的包-->
+    <!--<context:component-scan base-package="com.pymxb"></context:component-scan>-->
+
+
+
+
+    <!--<bean id="accountService" class="com.pymxb.service.impl.AccountServiceImpl"> </bean>   去掉之后，需要在service 中使用注解 @service 或是@Component-->
+    <!--<bean id="logger" class="com.pymxb.utils.Logger"></bean>  把通知类也交给Spring 窗口来管理-->
+
+    <!--配置AOP-->
+   <!--
+        1、@Aspect 配置切面类
+        2、@Before   @AfterReturning  @AfterThrowing @After 配置通知类型
+        3、配置切入点表达式 pt1  @Pointcu
+        4、配置spring开启注解AOP的支持
+   -->
+    <!-- 配置spring开启注解AOP的支持 -->
+    <!--<aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
+
+ </beans>

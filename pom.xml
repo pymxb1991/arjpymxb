@@ -19,6 +19,8 @@
         <module>spring-easy-account01-proxy</module>
         <module>spring-aop01</module>
         <module>spring-aop02</module>
+        <module>spring-aop03-anno</module>
+        <module>spring-aop4-withoutxml</module>
     </modules>
 
 
