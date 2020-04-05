@@ -8,6 +8,6 @@ public class AccountDaoImpl implements IAccountDao {
 
     @Override
     public void saveAccount() {
-        System.out.println("保存账号成功 dao");
+        System.out.println("保存账号成功  dao");
     }
 }
