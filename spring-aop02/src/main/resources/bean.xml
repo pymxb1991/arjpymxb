@@ -18,20 +18,29 @@
 
     <!--配置AOP-->
     <aop:config>  <!--标签表明开始AOP的配置 -->
+        <!-- 由于上面写法有很多重复代码，所以下面引出 通用化切入点表达式的应用 配置下面表达式之后，在上面只需要进行引用表达式变量名称即可 -->
+        <!-- 配置切入点表达式 id属性用于指定表达式的唯一标识。expression属性用于指定表达式内容
+          此标签写在aop:aspect标签内部只能当前切面使用。
+          它还可以写在aop:aspect外面，此时就变成了所有切面可用
+      -->
+        <aop:pointcut id="ptcut1" expression="execution( * com.pymxb.service.impl.*.*(..))"/>
+
         <!--配置切面 日志通知 -->
         <!-- 回顾2： 3、配置了一个切面 ，这个切面就在引用我们的通知，-->
         <aop:aspect id="logAdvice" ref="logger"> <!-- 标签表明配置切面 -->
           <!-- 配置前置通知：在切入点方法执行之前执行-->
-          <aop:before method="beforePrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:before>
+          <aop:before method="beforePrintLog" pointcut-ref="ptcut1"></aop:before>
 
           <!-- 配置后置通知：在切入点方法正常执行之后值。它和异常通知永远只能执行一个-->
-          <aop:after-returning method="afterReturningPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after-returning>
+          <aop:after-returning method="afterReturningPrintLog" pointcut-ref="ptcut1"></aop:after-returning>
 
           <!-- 配置异常通知：在切入点方法执行产生异常之后执行。它和后置通知永远只能执行一个 -->
-          <aop:after-throwing method="afterThrowingPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after-throwing>
+          <aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="ptcut1"></aop:after-throwing>
 
             <!-- 配置最终通知：无论切入点方法是否正常执行它都会在其后面执行-->
-           <aop:after method="afterPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after>
+           <aop:after method="afterPrintLog" pointcut-ref="ptcut1"></aop:after>
+
+
        </aop:aspect>
    </aop:config>
 
