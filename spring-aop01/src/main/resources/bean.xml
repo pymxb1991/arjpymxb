@@ -8,16 +8,50 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 配置spring的IOC 把service 对象配置进来-->
+    <!-- 回顾2： 1、首先有一个accountService  这个accountService 需要增强，执行方法之后要增加日志-->
     <bean id="accountService" class="com.pymxb.service.impl.AccountServiceImpl"> </bean>
+
+    <!--spring中基于XML的AOP配置步骤
+           1、把通知Bean也交给spring来管理
+           2、使用aop:config标签表明开始AOP的配置
+           3、使用aop:aspect标签表明配置切面
+                   id属性：是给切面提供一个唯一标识
+                   ref属性：是指定通知类bean的Id。
+           4、在aop:aspect标签的内部使用对应标签来配置通知的类型
+                  我们现在示例是让printLog方法在切入点方法执行之前之前：所以是前置通知
+                  aop:before：表示配置前置通知
+                       method属性：用于指定Logger类中哪个方法是前置通知
+                       pointcut属性：用于指定切入点表达式，该表达式的含义指的是对业务层中哪些方法增强
+
+            切入点表达式的写法：
+                关键字：execution(表达式)
+                表达式：
+                    访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)
+                标准的表达式写法：
+                    public void com.itheima.service.impl.AccountServiceImpl.saveAccount()
+       -->
+    <!-- 把通知Bean也交给spring来管理 -->
     <!-- 配置Logger类 -->
+    <!-- 回顾2： 2、提供一个日志，增加一个输出日志的方法，用于给 accountService 的方法增强-->
     <bean id="logger" class="com.pymxb.utils.Logger"></bean>
 
     <!--配置AOP-->
-    <aop:config>
-        <!--配置切面 -->
-        <aop:aspect id="logAdvice" ref="logger">
+    <aop:config>  <!--标签表明开始AOP的配置 -->
+        <!--配置切面 日志通知 -->
+        <!-- 回顾2： 3、配置了一个切面 ，这个切面就在引用我们的通知，-->
+        <aop:aspect id="logAdvice" ref="logger"> <!-- 标签表明配置切面 -->
             <!-- 配置通知的类型，并且建立通知方法和切入点方法的关联-->
+            <!-- 回顾2：4、然后通知中有一个方法printLog，这个printLog方法是准备在我们增强时候提前执行  其中配置了一个切入点表达式，明确了printLog要对方法增强-->
             <aop:before method="printLog" pointcut="execution(public void com.pymxb.service.impl.AccountServiceImpl.saveAccount())"></aop:before>
         </aop:aspect>
     </aop:config>
+
+    <!--回顾1
+        写完这部门再来回顾 一个此块配置的逻辑
+        1、配置了accountService ，需要增强，目的就是在执行accountService中的所有方法都记录日志；
+        2、由于accountService要记录日志，所以准备日志工具类，并提供一个方法，允许记录日志
+        3、配置一个日志通知，并且说明白，日志类中有一个pringLog 方法，会在accountService 的方法执行之前执行
+        4、配置切入点表达式，表明需要增强的方法，accountService中哪些方法需要增强；然后配置哪些
+     -->
+
 </beans>

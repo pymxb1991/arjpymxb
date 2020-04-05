@@ -29,7 +29,6 @@
     @Component    @Controller    @Service    @Repository
     
     @Autwired    @Qualifier   @Resource
-    
     @Value  @Scope
 ###spring-easy-account-xmlioc
     基于XML 配置学习
