@@ -46,3 +46,6 @@
     
     有了代理，然后对 spring-easy-account01 进行改造，
     解除耦合，消除依赖，使用事务
+###spring-aop01
+    1. XML 配置 AOP 逻辑
+       增强配置：accountService 方法执行前都进行记录日志
