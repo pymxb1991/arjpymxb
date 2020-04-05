@@ -9,46 +9,46 @@ import java.util.Properties;
 public class BeanFactory {
     private  static Properties properties;
 
-    //¸ÄÔì¹¤³§Ä£Ê½´´½¨BeanµÄ·½Ê½  ´´½¨ÍêÖ®ºó´æÆğÀ´£¬ÒÔ·½±ãÒÔºóÊ¹ÓÃ£¬²»ÓÃ´´½¨¶à¸ö£¬³ä·ÖÓ¦ÓÃµ¥ÀıÄ£Ê½
+    //æ”¹é€ å·¥å‚æ¨¡å¼åˆ›å»ºBeançš„æ–¹å¼  åˆ›å»ºå®Œä¹‹åå­˜èµ·æ¥ï¼Œä»¥æ–¹ä¾¿ä»¥åä½¿ç”¨ï¼Œä¸ç”¨åˆ›å»ºå¤šä¸ªï¼Œå……åˆ†åº”ç”¨å•ä¾‹æ¨¡å¼
 
-    //¶¨ÒåÒ»¸ömap  ÓÃÓÚ´æ·ÅÎÒÃÇÒª´´½¨µÄ¶ÔÏó£¬¡£ÎÒÃÇÓÖ³ÆÖ®ÎªÈİÆ÷
+    //å®šä¹‰ä¸€ä¸ªmap  ç”¨äºå­˜æ”¾æˆ‘ä»¬è¦åˆ›å»ºçš„å¯¹è±¡ï¼Œã€‚æˆ‘ä»¬åˆç§°ä¹‹ä¸ºå®¹å™¨
     private static Map<String,Object> beans;
     /**
-     * Ê¹ÓÃ¾²Ì¬´úÂë¿éÎª properties ¶ÔÏó¸³Öµ
+     * ä½¿ç”¨é™æ€ä»£ç å—ä¸º properties å¯¹è±¡èµ‹å€¼
      */
     static{
         try {
-            //ÊµÀı»¯¶ÔÏó
-             properties = new Properties();
-             //»ñÈ¡ properties ÎÄ¼şµÄÁ÷¶ÔÏó
-             InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
-             properties.load(in);
+            //å®ä¾‹åŒ–å¯¹è±¡
+            properties = new Properties();
+            //è·å– properties æ–‡ä»¶çš„æµå¯¹è±¡
+            InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
+            properties.load(in);
 
-             //¸ÄÔì½øĞĞÊ±start
-             //ÊµÀı»¯ÈİÆ÷
-             beans = new HashMap<String, Object>();
-             //È¡³öÅäÖÃÎÄ¼şÖĞËùÓĞµÄKey
-             Enumeration<Object> keys = properties.keys();
-             //±éÀúÃ¶¾Ù
-             while (keys.hasMoreElements()){
-                 String key = keys.nextElement().toString();
-                 //È¡³ö¶ÔÓ¦µÄÈ«ÏŞÀàÃû
-                 String beanPath = properties.getProperty(key);
-                 // Í¨¹ı·´Éä´´½¨¶ÔÏó
-                 Object beanObject = Class.forName(beanPath).newInstance();
+            //æ”¹é€ è¿›è¡Œæ—¶start
+            //å®ä¾‹åŒ–å®¹å™¨
+            beans = new HashMap<String, Object>();
+            //å–å‡ºé…ç½®æ–‡ä»¶ä¸­æ‰€æœ‰çš„Key
+            Enumeration<Object> keys = properties.keys();
+            //éå†æšä¸¾
+            while (keys.hasMoreElements()){
+                String key = keys.nextElement().toString();
+                //å–å‡ºå¯¹åº”çš„å…¨é™ç±»å
+                String beanPath = properties.getProperty(key);
+                // é€šè¿‡åå°„åˆ›å»ºå¯¹è±¡
+                Object beanObject = Class.forName(beanPath).newInstance();
 
-                 //¼ÓÈëÈİÆ÷
-                 beans.put(key,beanObject);
-             }
+                //åŠ å…¥å®¹å™¨
+                beans.put(key,beanObject);
+            }
 
-            //¸ÄÔì½øĞĞÊ±end
+            //æ”¹é€ è¿›è¡Œæ—¶end
         } catch (Exception e) {
-             throw  new ExceptionInInitializerError("³õÊ¼»¯ properties  Ê§°Ü");
+            throw  new ExceptionInInitializerError("åˆå§‹åŒ– properties  å¤±è´¥");
         }
     }
 
     /**
-     * ¸ù¾İBean Ãû³Æ»ñÈ¡bean¶ÔÏó
+     * æ ¹æ®Bean åç§°è·å–beanå¯¹è±¡
      * @param beanName
      * @return
      */
@@ -56,8 +56,8 @@ public class BeanFactory {
         return beans.get(beanName);
     }
 
-   /* *//**
-     * ¸ù¾İBean Ãû³Æ»ñÈ¡bean¶ÔÏó
+    /* *//**
+     * æ ¹æ®Bean åç§°è·å–beanå¯¹è±¡
      * @param beanName
      * @return
      *//*
@@ -65,9 +65,9 @@ public class BeanFactory {
 
         Object bean = null;
         try {
-        //»ñÈ¡ bean µÄÂ·¾¶
+        //è·å– bean çš„è·¯å¾„
         String beanPath = properties.getProperty(beanName);
-        //Í¨¹ı·´Éä£¬È»ºó½øĞĞÊµÀı»¯¶ÔÏó
+        //é€šè¿‡åå°„ï¼Œç„¶åè¿›è¡Œå®ä¾‹åŒ–å¯¹è±¡
             bean = Class.forName(beanPath).newInstance();
         } catch (Exception e) {
             e.printStackTrace();
