@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan(basePackages = {"com.pymxb"}) //扫描包，必须是配置类
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy //配置spring开启注解AOP的支持
 public class SpringConfiguration {
 
 }
