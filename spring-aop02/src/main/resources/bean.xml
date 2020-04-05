@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置spring的IOC 把service 对象配置进来-->
+    <!-- 回顾2： 1、首先有一个accountService  这个accountService 需要增强，执行方法之后要增加日志-->
+    <bean id="accountService" class="com.pymxb.service.impl.AccountServiceImpl"> </bean>
+
+    <!-- 把通知Bean也交给spring来管理 -->
+    <!-- 配置Logger类 -->
+    <!-- 回顾2： 2、提供一个日志，增加一个输出日志的方法，用于给 accountService 的方法增强-->
+    <bean id="logger" class="com.pymxb.utils.Logger"></bean>
+
+    <!--配置AOP-->
+    <aop:config>  <!--标签表明开始AOP的配置 -->
+        <!--配置切面 日志通知 -->
+        <!-- 回顾2： 3、配置了一个切面 ，这个切面就在引用我们的通知，-->
+        <aop:aspect id="logAdvice" ref="logger"> <!-- 标签表明配置切面 -->
+          <!-- 配置前置通知：在切入点方法执行之前执行-->
+          <aop:before method="beforePrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:before>
+
+          <!-- 配置后置通知：在切入点方法正常执行之后值。它和异常通知永远只能执行一个-->
+          <aop:after-returning method="afterReturningPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after-returning>
+
+          <!-- 配置异常通知：在切入点方法执行产生异常之后执行。它和后置通知永远只能执行一个 -->
+          <aop:after-throwing method="afterThrowingPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after-throwing>
+
+            <!-- 配置最终通知：无论切入点方法是否正常执行它都会在其后面执行-->
+           <aop:after method="afterPrintLog" pointcut="execution( * com.pymxb.service.impl.*.*(..))"></aop:after>
+       </aop:aspect>
+   </aop:config>
+
+
+ </beans>
