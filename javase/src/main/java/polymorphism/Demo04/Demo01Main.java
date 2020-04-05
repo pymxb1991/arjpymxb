@@ -1,4 +1,4 @@
-package polymorphism;
+package polymorphism.Demo04;
 
 /*
 向上转型一定是安全的，没有问题的，正确的。但是也有一个弊端：

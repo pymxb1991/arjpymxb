@@ -1,4 +1,4 @@
-package polymorphism;
+package polymorphism.Demo04;
 
 /*
 如何才能知道一个父类引用的对象，本来是什么子类？
@@ -23,7 +23,7 @@ public class Demo02Instanceof {
             Cat cat = (Cat) animal;
             cat.catchMouse();
         }
-
+        //女朋友想要领养宠物
         giveMeAPet(new Dog());
     }
 
