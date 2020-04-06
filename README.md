@@ -30,23 +30,23 @@
     
     @Autwired    @Qualifier   @Resource
     @Value  @Scope
-###spring-easy-account-xmlioc
+### spring-easy-account-xmlioc
     基于XML 配置学习
-###spring-easy-account-annlioc
+### spring-easy-account-annlioc
     基于注解 配置学习
-###spring-easy-account-withoutxmlioc
+### spring-easy-account-withoutxmlioc
     无XML 纯注解配置学习
-###spring-easy-account01
+### spring-easy-account01
     银行转账业务代码分析学习
     事务初探-数据异常回滚（使用工具类方式） 
-###spring-easy-account01-proxy
+### spring-easy-account01-proxy
     代理模式--初探
     旧时模式：生产产家生产产品，自己销售和售后；
     新的模式：生产产家生产产品，委托代理商进行销售，代理商根据自己要求，选择有销售和售后的生产产家进行合作   
     
     有了代理，然后对 spring-easy-account01 进行改造，
     解除耦合，消除依赖，使用事务
-###spring-aop01
+### spring-aop01
     1. XML 配置 AOP 逻辑
        增强配置：accountService 方法执行前都进行记录日志
        实际开发中切入点表达式的通常写法 学习：
@@ -59,7 +59,7 @@
                public void com.itheima.service.impl.AccountServiceImpl.saveAccount()
                ……
            详细配置见：bean.xml
-###spring-aop02
+### spring-aop02
     1. spring AOP
             XML配置 前置，后置，异常，最终通知, 以及环绕通知 学习
             通用化切入点表达式的应用
@@ -67,7 +67,7 @@
              环绕通知：切入点方法调用
                  Spring框架为我们提供了一个接口：ProceedingJoinPoint。该接口有一个方法proceed()，此方法就相当于明确调用切入点方法。
                  该接口可以作为环绕通知的方法参数，在程序执行时，spring框架会为我们提供该接口的实现类供我们使用。
-###spring-aop03-anno
+### spring-aop03-anno
     1. 注解 配置 AOP 逻辑
           1、@Aspect 配置切面类
           2、@Before   @AfterReturning  @AfterThrowing @After 配置通知类型
@@ -79,15 +79,15 @@
                 发现通知执行顺序有问题（最终通知总在 后置通知，异常通知前面，）调用顺序有问题
           ********************************************************************************
        
-###spring-aop04-withoutxml
+### spring-aop04-withoutxml
     1. 纯注解 配置 AOP 逻辑
        增加配置Config配置 -->> SpringConfiguration 类
        @EnableAspectJAutoProxy //配置spring开启注解AOP的支持
        即可；
-###spring-aop05-easy-aoptx-xml
+### spring-aop05-easy-aoptx-xml
     1、案例改造
           银行转账改造： 
              把用工厂模式创建代理service 模式控制事务 改造为 基于 AOP 控制事务  XML模式
-###spring-aop06-easy-aoptx-anno
+### spring-aop06-easy-aoptx-anno
     1、案例改造
            银行转账改造： 为注解配置的设置
