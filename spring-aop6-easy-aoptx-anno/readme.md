@@ -40,4 +40,21 @@
            7、把xml 中配置也干掉；
            8、最后在xml 中开启spring 对注解AOP的支持
     6. 配置完毕AOP 之后，直接测试     
+    7、测试结果：java.sql.SQLException: Can't call commit when autocommit=true
+      ********************************************************************************
+       分析原因： 是因为spring 注解AOP 的最终通知总是在后置通知，异常通知之前执行，最终通知总是在前执行，提前把connection 关闭，自然就提交不了了
+      ********************************************************************************
+      
+    8、代码执行分析：
+         1、首先 执行入口：AccountServiceTest: testTransfer
+         2、然后进行service: AccountServiceImpl:  testTransfer
+         3、然后service 中调用Dao中的方法：获取数据库连接，然后从数据库中获取数据: dao.findAccountByName(ConnectionUtil.getThreadConnection()……)
+            获取到之后然后更新 也是调用Dao中的方法
+         4、数据库连接工具类中：ConnectionUtil -> getThreadConnection() 获取数据库连接，然后从线程上获取，如果没有再进行创建；
+         5、在AOP的执行顺序中，因为最终通知总是在后置通知，异常通知之前执行，
+            只要最终通知执行，connectionUtils.getThreadConnection().close();//还回连接池中
+                            connectionUtils.removeConnection();
+            那么就会把连接和线程解绑，
+            而当后置通知，和异常通知再次执行时，还会去线程上拿连接，但是由于没有连接了，所以会进行创建，所以拿到的连接是一个新的连接，所以会出现控制不了事务的情况
     
+    9、如果想要使用AOP 控制事务，那么则只能使用环绕通知；

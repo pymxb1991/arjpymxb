@@ -18,10 +18,6 @@ public class ConnectionUtils {
     @Autowired
     private DataSource dataSource;
 
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
-
     /**
      * 获取当前线程上的连接
      * @return
