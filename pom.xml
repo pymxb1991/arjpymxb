@@ -24,6 +24,7 @@
         <module>spring-aop-easy-account-anno</module>
         <module>spring-aop05-easy-account</module>
         <module>spring-aop5-easy-aoptx-xml</module>
+        <module>spring-aop6-easy-aoptx-anno</module>
     </modules>
 
 
