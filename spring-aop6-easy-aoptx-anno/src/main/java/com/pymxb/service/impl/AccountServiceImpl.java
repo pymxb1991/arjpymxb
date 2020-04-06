@@ -4,6 +4,8 @@ package com.pymxb.service.impl;
 import com.pymxb.dao.IAccountDao;
 import com.pymxb.domain.Account;
 import com.pymxb.service.IAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,20 +14,12 @@ import java.util.List;
  *
  * 事务的控制 都在业务类
  */
+@Service
 public class AccountServiceImpl implements IAccountService {
 
-    /*//注入事务管理
-    private TransactionManager tManager;
 
-    public void settManager(TransactionManager tManager) {
-        this.tManager = tManager;
-    }*/
-
+    @Autowired
     private IAccountDao accountDao;
-
-    public void setAccountDao(IAccountDao accountDao) {
-        this.accountDao = accountDao;
-    }
 
     @Override
     public List<Account> findAllAccount() {
@@ -73,7 +67,7 @@ public class AccountServiceImpl implements IAccountService {
         //2.5更新转出账户
         accountDao.updateAccount(source);
 
-         int i=1/0;
+       //  int i=1/0;
 
         //2.6更新转入账户
         accountDao.updateAccount(target);

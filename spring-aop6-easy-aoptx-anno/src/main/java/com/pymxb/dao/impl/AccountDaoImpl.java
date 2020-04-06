@@ -7,6 +7,8 @@ import com.pymxb.utils.ConnectionUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -37,24 +39,17 @@ import java.util.List;
  *        <property name="txManager" ref="txManager"></property>
  *
  */
+@Repository
 public class AccountDaoImpl implements IAccountDao {
 
+    @Autowired
     private QueryRunner runner;
 
     /**
      * 注入工具类，从线程中获取数据连接
      */
+    @Autowired
     private ConnectionUtils connectionUtils;
-
-    public void setConnectionUtils(ConnectionUtils connectionUtils) {
-        this.connectionUtils = connectionUtils;
-    }
-
-    public void setRunner(QueryRunner runner) {
-        this.runner = runner;
-    }
-
-
 
     @Override
     public List<Account> findAllAccount() {
