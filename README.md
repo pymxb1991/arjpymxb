@@ -49,3 +49,45 @@
 ###spring-aop01
     1. XML 配置 AOP 逻辑
        增强配置：accountService 方法执行前都进行记录日志
+       实际开发中切入点表达式的通常写法 学习：
+       execution(表达式)
+       切入点表达式的写法：
+           关键字：execution(表达式)
+           表达式：
+               访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)
+           标准的表达式写法：
+               public void com.itheima.service.impl.AccountServiceImpl.saveAccount()
+               ……
+           详细配置见：bean.xml
+###spring-aop02
+    1. spring AOP
+            XML配置 前置，后置，异常，最终通知, 以及环绕通知 学习
+            通用化切入点表达式的应用
+             <aop:pointcut id="ptcut1" expression="execution( * com.pymxb.service.impl.*.*(..))"/>
+             环绕通知：切入点方法调用
+                 Spring框架为我们提供了一个接口：ProceedingJoinPoint。该接口有一个方法proceed()，此方法就相当于明确调用切入点方法。
+                 该接口可以作为环绕通知的方法参数，在程序执行时，spring框架会为我们提供该接口的实现类供我们使用。
+###spring-aop03-anno
+    1. 注解 配置 AOP 逻辑
+          1、@Aspect 配置切面类
+          2、@Before   @AfterReturning  @AfterThrowing @After 配置通知类型
+          3、配置切入点表达式 pt1  @Pointcu
+          4、配置spring开启注解AOP的支持
+          
+          ********************************************************************************
+           注意，在使用注解 @Before   @AfterReturning  @AfterThrowing @After 配置通知类型时，
+                发现通知执行顺序有问题（最终通知总在 后置通知，异常通知前面，）调用顺序有问题
+          ********************************************************************************
+       
+###spring-aop04-withoutxml
+    1. 纯注解 配置 AOP 逻辑
+       增加配置Config配置 -->> SpringConfiguration 类
+       @EnableAspectJAutoProxy //配置spring开启注解AOP的支持
+       即可；
+###spring-aop05-easy-aoptx-xml
+    1、案例改造
+          银行转账改造： 
+             把用工厂模式创建代理service 模式控制事务 改造为 基于 AOP 控制事务  XML模式
+###spring-aop06-easy-aoptx-anno
+    1、案例改造
+           银行转账改造： 为注解配置的设置
