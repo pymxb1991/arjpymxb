@@ -24,19 +24,24 @@ public class JdbcTemplateDemo3 {
         JdbcTemplate jdbcTemplate = (JdbcTemplate)ac.getBean("jdbcTemplate");
         //jdbcTemplate.execute("insert into account(name,money) values('eee',1000) ");
         //3、执行操作（带参数）
-        //保存
+
+        //3.1--保存
         //jdbcTemplate.update("insert into account(name,money) values(?,?)","fff",5555f);
-        //更新
+
+        //3.2--更新
        // jdbcTemplate.update("update  account set money = (?) where id =(?)","1000",5);
-        //删除
+
+        //3.3--删除
        // jdbcTemplate.update("delete from account where id = (?)","5");
-        //查询所有
-         //众多方法分析，应该选取哪一个：首先应该考虑：我们有什么，然后考虑：我们要什么
-        //我们有什么：  执行查询，那么我们有SQL语句，还有参数；  我们要什么：返回一个List 结果集
-        //RowMapper 是一个接口，想要用它，只能去实现他 实现之后，把新的RowMapper对象添加进来
-        //List<Account> accountList = jdbcTemplate.query("select * from account where money > ?", new AccountRowMapper(), 1000f);
-        //写完上面的语句，回过头来想想，难道spring 没有一个将对象封装到集合里面的实现吗？有 BeanPropertyRowMapper
-       /* List<Account> accountList = jdbcTemplate.query("select * from account where money > ?", new BeanPropertyRowMapper<Account>(Account.class), 1000f);
+
+        //3.4--查询所有
+          //众多方法分析，应该选取哪一个：首先应该考虑：我们有什么，然后考虑：我们要什么
+          //我们有什么：  执行查询，那么我们有SQL语句，还有参数；  我们要什么：返回一个List 结果集
+          //RowMapper 是一个接口，想要用它，只能去实现他 实现之后，把新的RowMapper对象添加进来
+          //List<Account> accountList = jdbcTemplate.query("select * from account where money > ?", new AccountRowMapper(), 1000f);
+
+          //写完上面的语句，回过头来想想，难道spring 没有一个将对象封装到集合里面的实现吗？有 BeanPropertyRowMapper
+          /* List<Account> accountList = jdbcTemplate.query("select * from account where money > ?", new BeanPropertyRowMapper<Account>(Account.class), 1000f);
         for(Account account:accountList){
             System.out.println(account);
         }*/
