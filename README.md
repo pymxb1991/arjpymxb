@@ -93,3 +93,8 @@
            银行转账改造： 为注解配置的设置
            
            使用环绕通知，解决事务控制 问题；
+### spring-easy-jdbcTemplate01
+    1、JdbcTemplate 初探，学习
+    2、JdbcTemplate CRUD 操作
+       注意：在查询所有时，query 的第二个参数是RowMapper ，RowMapper 是一个接口，想要用它，只能去实现他 实现之后，把新的RowMapper对象添加进来
+    3、JdbcDaoSupport的使用以及Dao的两种编写方式
