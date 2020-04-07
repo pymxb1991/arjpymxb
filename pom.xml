@@ -27,6 +27,7 @@
         <module>spring-aop6-easy-aoptx-anno</module>
         <module>spring-easy-jdbc01</module>
         <module>spring-easy-jdbcTemplate01</module>
+        <module>spring-easy-tx01</module>
     </modules>
 
 
