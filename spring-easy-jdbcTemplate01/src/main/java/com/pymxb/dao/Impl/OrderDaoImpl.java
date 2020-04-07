@@ -12,15 +12,13 @@ import java.util.List;
  * @author Mr.Mao
  * @date 2020/04/07
  */
-public class AccountDaoImpl extends JdbcDaoSupport implements IAccountDao {
+public class OrderDaoImpl extends JdbcDaoSupport implements IAccountDao {
 
-/*
-    private JdbcTemplate jdbcTemplate;
+    /*private JdbcTemplate jdbcTemplate;
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-    }
-*/
+    }*/
 
     @Override
     public Account findAccountById(Integer accountId) {
