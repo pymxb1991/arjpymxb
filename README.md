@@ -98,3 +98,10 @@
     2、JdbcTemplate CRUD 操作
        注意：在查询所有时，query 的第二个参数是RowMapper ，RowMapper 是一个接口，想要用它，只能去实现他 实现之后，把新的RowMapper对象添加进来
     3、JdbcDaoSupport的使用以及Dao的两种编写方式
+### spring-easy-tx01
+    spring中基于XML的声明式事务控制配置步骤
+         1、配置事务管理器
+         2、配置事务的通知
+         3、配置AOP中的通用切入点表达式
+         4、建立事务通知和切入点表达式的对应关系
+         5、最后还需要配置事务的属性
