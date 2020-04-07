@@ -34,4 +34,12 @@
                2、如果没有传jdbctemplate，而是传了一个dataSource ，那么，jdbctemplate是否可以有值呢
                   传dataSource会触发setDataSource() ,如果jdbctemplate是null ,那么会进行初始化jdbctemplate；
          8.当使用如此设置之后，XML 中的配置就可以进行改造一下；
-              <!--配置账户的持久层 --> 中不需要注入jdbctemplate，直接注入dataSource
+              <!--配置账户的持久层 --> 中也就可以直接注入dataSource,而不用先注入jdbctemplate然后再获取数据源了；
+              
+              当然，既然我们都能想到这种写法，那么spring 也就能想到，也就可以支持extend这种写法；
+              在Spring 中 public abstract class JdbcDaoSupport 直接继承它即可实现我们上述功能；
+              
+         9. 需要注意的就是这两种写法，一种是继承，一种是不继承；
+                如果用注解开发，那么 可以直接使用注解@Autowrite 进行注入jdbctemplate；
+                如果是XML 配置开发，那么可以直接用继承开发
+              
