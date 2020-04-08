@@ -29,6 +29,7 @@
         <module>spring-easy-jdbcTemplate01</module>
         <module>spring-easy-tx01</module>
         <module>spring-easy-tx02-anno</module>
+        <module>spring-easy-tx03-withoutxml</module>
     </modules>
 
 
