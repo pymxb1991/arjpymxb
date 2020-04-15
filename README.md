@@ -18,6 +18,12 @@
                 因为子类就是一个父类，在这里体现了面向对象的多态性
             3. 向上转型一定是安全的，没有问题的，正确的。但是也有一个弊端：
                对象一旦向上转型为父类，那么就无法调用子类原本特有的内容。
+    5. 常用的API 
+           equals   字符串的比较； 对象比较需要重写equals 方法比较对象属性
+       instanceof   判断前面的对象能不能当做后面类型的实例。详见 javase -->polymorphism -->Demo4 -->Demo02Instanceof
+          Objects   中的方法是null-save (空指针安全)   null-tolerant (容忍空指针的)
+                    Objects类的equals方法:对两个对象进行比较,防止空指针异常
+           DATE()   无参构造，有参构造，getTime() 学习；
 ### spring demo 
 ### spring IOC
     曾经XML 配置
