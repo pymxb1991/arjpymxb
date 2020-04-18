@@ -10,3 +10,11 @@
 /spring-easy-account01-proxy/target/classes/
 /spring-aop02/target/
 /spring-easy-tx01/target/
+/spring-aop01/target/
+/spring-aop4-withoutxml/target/
+/spring-aop03-anno/target/classes/
+/spring-aop5-easy-aoptx-xml/target/
+/spring-aop6-easy-aoptx-anno/target/
+/spring-easy-jdbcTemplate01/target/classes/
+/spring-easy-tx02-anno/target/
+/spring-easy-tx03-withoutxml/target/
