@@ -13,7 +13,7 @@
     <!-- 1、 配置Spring创建容器时要扫描的包-->
     <context:component-scan base-package="com.pymxb"></context:component-scan>
 
-
+88
     <!--配置QueryRunner -->
     <!--单例情况下，多个Dao同时使用一个QueryRunner时 可能出现一个还没用完，另一个要使用，导致线程互相干扰 所以需要配置 scope 范围-->
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">

@@ -130,3 +130,23 @@
         5、第四个注解： @PropertySource 加载数据源配置文件进容器  同时使用@Value 把基本类型数据注入
         6、第五个注解: @EnableTransactionManagement 开启注解支持，同时创建事务管理器
         7、以上操作都操作完之后，Bean.xml 就可以直接干掉了，
+### spring-mvc 拦截器
+    实现步骤：
+    1、自定义类 同时 implements HandlerInterceptor()；
+    2、配置拦截器，并配置拦截器的请求路径；
+       <!-- 拦截器 -->
+       	<mvc:interceptors>
+       		<mvc:interceptor>
+       			<!-- 拦截的请求是谁-->
+       			<mvc:mapping path="/**" />
+       			<!-- 放行的请求是谁-->
+       			<mvc:exclude-mapping path="/swagger-resources/**" />
+       			<!-- 使用的拦截器是谁-->
+       			<bean class="cn.edu.tju.base.interceptor.DefaultInterceptor" />
+       		</mvc:interceptor>
+       	</mvc:interceptors>
+### springboot 拦截器
+        实现步骤：
+        1、自定义类 同时 implements HandlerInterceptor()；
+           
+        2、配置拦截器，但必须使用注解方式
