@@ -28,6 +28,9 @@
         <module>spring-easy-tx02-anno</module>
         <module>spring-easy-tx03-withoutxml</module>
         <module>mybatis-easy-01</module>
+        <module>pulsar-demo</module>
+        <module>Granfana-influxdb</module>
+        <module>DesignPattern</module>
     </modules>
 
 

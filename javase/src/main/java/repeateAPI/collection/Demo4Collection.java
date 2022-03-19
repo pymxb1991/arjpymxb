@@ -11,6 +11,6 @@ import java.util.Collection;
  */
 public class Demo4Collection {
     public static void main(String[] args) {
-        Collection<String> coll = new ArrayList<>();
+        Collection<String> coll = new ArrayList<String>();
     }
 }

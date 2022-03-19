@@ -22,7 +22,7 @@ public class Demo02Foreach {
 
     //使用增强for循环遍历集合
     private static void demo02() {
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
         list.add("aaa");
         list.add("bbb");
         list.add("ccc");

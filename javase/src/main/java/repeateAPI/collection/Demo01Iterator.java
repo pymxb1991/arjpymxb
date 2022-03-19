@@ -23,7 +23,7 @@ import java.util.Iterator;
 public class Demo01Iterator {
     public static void main(String[] args) {
         //创建一个集合对象
-        Collection<String> coll = new ArrayList<>();
+        Collection<String> coll = new ArrayList<String>();
         //往集合中添加元素
         coll.add("姚明");
         coll.add("科比");

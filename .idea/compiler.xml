@@ -2,12 +2,40 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="arjpymxb" />
+        <module name="spring-easy-account-xmlioc" />
+        <module name="spring-demo" />
+        <module name="spring-easy-account01" />
+        <module name="DesignPattern" />
+        <module name="spring-aop6-easy-aoptx-anno" />
+        <module name="pulsar-demo" />
+        <module name="spring-easy-account-annioc" />
+        <module name="spring-aop5-easy-aoptx-xml" />
+        <module name="spring-easy-account-ann_withoutxmlioc" />
+        <module name="Granfana-influxdb" />
+        <module name="fruitStrategy" />
+        <module name="javase" />
+        <module name="spring-easy-tx01" />
+        <module name="spring-IoC" />
+        <module name="mybatis-easy-01" />
+        <module name="spring-easy-jdbcTemplate01" />
+        <module name="spring-easy-account01-proxy" />
+        <module name="spring-aop01" />
+        <module name="spring-aop02" />
+        <module name="spring-easy-tx02-anno" />
+        <module name="spring-easy-tx03-withoutxml" />
+        <module name="spring-aop4-withoutxml" />
+        <module name="spring-aop03-anno" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="fruitStrategy" options="-parameters" />
+    </option>
   </component>
 </project>

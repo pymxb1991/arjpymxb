@@ -16,7 +16,7 @@ public class Manager extends User {
 
     public ArrayList<Integer> send(int totalMoney, int count) {
         // 首先需要一个集合，用来存储若干个红包的金额
-        ArrayList<Integer> redList = new ArrayList<>();
+        ArrayList<Integer> redList = new ArrayList<Integer>();
 
         // 首先看一下群主自己有多少钱
         int leftMoney = super.getMoney(); // 群主当前余额
