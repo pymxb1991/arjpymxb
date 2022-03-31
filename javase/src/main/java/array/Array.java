@@ -1,6 +1,10 @@
 package array;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 内存分析见resource 中图片分析
@@ -8,7 +12,7 @@ import java.util.ArrayList;
 public class Array {
     public static void main(String[] args) {
         //动态数组
-        int[] array1 = new int[3];
+/*        int[] array1 = new int[3];
         // 静态数组
         String[]  array2 = new String[]{"a","b","c"};
 
@@ -22,10 +26,16 @@ public class Array {
         String[] temp = reverseArray2(Array);// 直接使用数组实现反转
         for (int j = 0; j < temp.length; j++) {
             System.out.print(Array[j] + " ");
-        }
-
+        }*/
+        asListTest();
     }
-
+    private  static void asListTest(){
+        String str = "a,b,c,d,e";
+        List<String> strings = Arrays.asList(str.split(","));
+        strings.forEach(strs->{
+            System.out.println(strs);
+        });
+    }
     /*
      * 函数：reverseArray1和reverseArray2
      * 功能：实现 数组翻转
